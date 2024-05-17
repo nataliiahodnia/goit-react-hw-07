@@ -1,16 +1,14 @@
-import { FaUser } from "react-icons/fa6";
-import { FaPhone } from "react-icons/fa6";
+import { FaUser } from 'react-icons/fa6';
+import { FaPhone } from 'react-icons/fa6';
 
-import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/contactsOps';
 
-import css from "./Contact.module.css";
+import css from './Contact.module.css';
 
-export default function Contact({ contacts: { id, name, number } }) {
+export default function Contact({ filteredContacts: { id, name, number } }) {
   const dispatch = useDispatch();
-
   const handleDelete = () => dispatch(deleteContact(id));
-
   return (
     <li className={css.listItem}>
       <div className={css.contactInfo}>
